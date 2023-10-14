@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>Descending order sorting</title>
+</head>
+<body style="text-align: center; margin-top: 20px; font-size:large;">
+    <p>Enter numbers separated by commas or spaces:</p>
+    <input type="text" id="inputNumbers" style="height: 40px; width: 200px; border-radius: 4px;">
+    <button onclick="sortAndDisplay()" style="height: 40px;">Sort</button>
+
+    <p>Sorted Numbers in Descending Order:</p>
+    <div id="output"></div>
+
+    <script>
+        function sortAndDisplay() {
+            const inputNumbers = document.getElementById("inputNumbers").value;
+            const numbersArray = inputNumbers.split(/[ ,]+/).map(Number);
+            numbersArray.sort(function(a, b) {
+                return b - a;
+            });
+
+            const outputDiv = document.getElementById("output");
+            outputDiv.textContent = numbersArray.join(', ');
+        }
+    </script>
+</body>
+</html>
